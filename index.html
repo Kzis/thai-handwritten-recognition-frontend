@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BADS Thai Hand Written</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--::banner part start::-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-5">
+                    <div class="banner_img d-none d-lg-block">
+                        <img src="img/banner_img.png" alt="">
+                    </div>
+                </div>
+                <div class="row col-lg-6" style="position:static">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h1>Thai Handwritten Recognition</h1>
+                            <canvas
+                            id="canvas"
+                            width="280"
+                            height="280"
+                            style="border:2px solid; float: left; border-radius: 5px; cursor: crosshair;"
+                        ></canvas>
+                            <div id="div-result" class="row col-lg-6">
+           
+                                <table id="tbl-result" style="display:none">
+                                    <tr style="height: 100px;">
+                                        <td><p>Result 1 :</p></td>
+                                        <td>
+                                            <p id="result-1" class="" style="font-size: 50px; padding-left: 20px;">ก</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Result 2 :</p></td>
+                                        <td>
+                                            <p id="result-2" class="" style="padding-left: 20px;">ข</p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><p>Result 3 :</p></td>
+                                        <td>
+                                            <p id="result-3" class="" style="padding-left: 20px;">ค</p>
+                                        </td>
+                                    </tr>
+                                </table>
+ 
+                            </div>
+                           
+                            <div class="row col-lg-8" style="margin-top: 20px;">
+                                <a id="predictButton" href="#" class="btn_2" style="margin: 0px 0px 0px 0px;">Predict</a>
+                                
+                                <input
+                                type="button"
+                                class="btn_1"
+                                id="clearButton"
+                                value="Clear"
+                                 />
+
+                            </div>
+
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="img/animate_icon/Ellipse_7.png" alt="" class="feature_icon_1 custom-animation1">
+        <img src="img/animate_icon/Ellipse_8.png" alt="" class="feature_icon_2 custom-animation2">
+        <img src="img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_3 custom-animation3">
+        <img src="img/animate_icon/Ellipse_2.png" alt="" class="feature_icon_4 custom-animation4">
+        <img src="img/animate_icon/Ellipse_3.png" alt="" class="feature_icon_5 custom-animation5">
+        <img src="img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_6 custom-animation6">
+    </section>
+    <!--::banner part start::-->
+
+    <!--::footer_part start::-->
+    <!-- <footer class="footer_part"> -->
+    <footer>
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright_text">
+                        <P>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Business Analytics and Data Science (BADS) | National Institute of Development Administration. All rights reserved <i class="ti-heart" aria-hidden="true"></i> </a>
+                        </P>
+                        </br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--::footer_part end::-->
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="./js/index.js"></script>
+
+</html>
