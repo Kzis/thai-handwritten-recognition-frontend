@@ -152,8 +152,8 @@
 				data: JSON.stringify (img),
 				success: function(data) {
 					$("#result-1").text(data[0]);
-					$("#result-2").text(data[1] || "-");
-					$("#result-3").text(data[2] || "-");
+					// $("#result-2").text(data[1] || "-");
+					// $("#result-3").text(data[2] || "-");
                     context.clearRect( 0, 0, 280, 280 );
                     context.fillStyle="white";
                     context.fillRect(0,0,canvas.width,canvas.height);
