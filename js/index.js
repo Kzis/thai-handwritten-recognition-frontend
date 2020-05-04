@@ -139,7 +139,8 @@
 			tblResult.removeAttribute("style")
 
             // var $SCRIPT_ROOT = "/api/predict/";
-            var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
+			// var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
+			var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
 
             var canvasObj = document.getElementById("canvas");
             var context = canvas.getContext( "2d" );
