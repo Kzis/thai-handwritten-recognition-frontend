@@ -13,6 +13,8 @@
 	context.lineWidth = 6;
 	context.lineJoin = context.lineCap = 'round';
 	debug();
+	// startup(); 
+
 	canvas.addEventListener( "mousemove", function( e ){
 		lastMouse.x = Mouse.x;
 		lastMouse.y = Mouse.y;
@@ -28,6 +30,25 @@
 
 	canvas.addEventListener( "mouseup", function(){
 		canvas.removeEventListener( "mousemove", onPaint, false );
+	}, false );
+
+	canvas.addEventListener( "touchmove", function( e ){
+		lastMouse.x = Mouse.x;
+		lastMouse.y = Mouse.y;
+
+		Mouse.x = e.pageX - this.offsetLeft;
+		Mouse.y = e.pageY - this.offsetTop;
+
+	}, false );
+
+	canvas.addEventListener( "touchstart", function( e ){
+		canvas.addEventListener( "touchmove", onPaint, false );
+		// canvas.addEventListener( "mousemove", onPaint, false );
+	}, false );
+
+	canvas.addEventListener( "touchend", function(){
+		canvas.removeEventListener( "touchmove", onPaint, false );
+		// canvas.removeEventListener( "mousemove", onPaint, false );
 
 	}, false );
 
@@ -99,4 +120,5 @@
 			context.lineWidth = $( this ).val();
 		});
 	}
+
 }());
