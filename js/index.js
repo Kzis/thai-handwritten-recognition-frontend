@@ -23,7 +23,9 @@
 	} 
 
 	function clearCanvas(canvas,ctx) {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.clearRect( 0, 0, 280, 280 );
+		ctx.fillStyle="white";
+		ctx.fillRect(0,0,canvas.width,canvas.height);
 	}
 
 	function sketchpad_mouseDown() {
@@ -138,8 +140,8 @@
 			var tblResult = document.getElementById('tbl-result')
 			tblResult.removeAttribute("style")
 
-			// var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
-			var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
+			var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
+			// var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
 
             var canvasObj = document.getElementById("canvas");
             var context = canvas.getContext( "2d" );
@@ -160,9 +162,11 @@
 					$("#result-2").text(result2[0] || "-");
 					$("#result-3").text(result3[0] || "-");
 
-					context.clearRect( 0, 0, 280, 280 );
-                    context.fillStyle="white";
-                    context.fillRect(0,0,canvas.width,canvas.height);
+					clearCanvas(canvas,context)
+
+					// context.clearRect( 0, 0, 280, 280 );
+                    // context.fillStyle="white";
+                    // context.fillRect(0,0,canvas.width,canvas.height);
                 },
                 error: function (req, err) {
 					console.log(err)      
@@ -190,5 +194,9 @@
 
 	debug();
 	init()
+	
+	context.clearRect( 0, 0, 280, 280 );
+	context.fillStyle="white";
+	context.fillRect(0,0,canvas.width,canvas.height);
 
 }());
