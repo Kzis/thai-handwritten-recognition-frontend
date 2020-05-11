@@ -138,7 +138,6 @@
 			var tblResult = document.getElementById('tbl-result')
 			tblResult.removeAttribute("style")
 
-            // var $SCRIPT_ROOT = "/api/predict/";
 			// var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
 			var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
 
@@ -161,9 +160,9 @@
 					$("#result-2").text(result2[0] || "-");
 					$("#result-3").text(result3[0] || "-");
 
-					// context.clearRect( 0, 0, 280, 280 );
-                    // context.fillStyle="white";
-                    // context.fillRect(0,0,canvas.width,canvas.height);
+					context.clearRect( 0, 0, 280, 280 );
+                    context.fillStyle="white";
+                    context.fillRect(0,0,canvas.width,canvas.height);
                 },
                 error: function (req, err) {
 					console.log(err)      
