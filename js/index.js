@@ -139,8 +139,8 @@
 			tblResult.removeAttribute("style")
 
             // var $SCRIPT_ROOT = "/api/predict/";
-			// var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
-			var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
+			var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
+			// var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
 
             var canvasObj = document.getElementById("canvas");
             var context = canvas.getContext( "2d" );
@@ -151,12 +151,19 @@
 				url: $SCRIPT_ROOT,
 				data: JSON.stringify (img),
 				success: function(data) {
-					$("#result-1").text(data[0]);
-					// $("#result-2").text(data[1] || "-");
-					// $("#result-3").text(data[2] || "-");
-                    context.clearRect( 0, 0, 280, 280 );
-                    context.fillStyle="white";
-                    context.fillRect(0,0,canvas.width,canvas.height);
+					var response = data.response
+					var tuple = response.split("|")
+					var result1 = tuple[0].split(":")
+					var result2 = tuple[1].split(":")
+					var result3 = tuple[2].split(":")
+
+					$("#result-1").text(result1[0] || "-");
+					$("#result-2").text(result2[0] || "-");
+					$("#result-3").text(result3[0] || "-");
+
+					// context.clearRect( 0, 0, 280, 280 );
+                    // context.fillStyle="white";
+                    // context.fillRect(0,0,canvas.width,canvas.height);
                 },
                 error: function (req, err) {
 					console.log(err)      
