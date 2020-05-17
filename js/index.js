@@ -137,20 +137,22 @@
         var predictButton = $("#predictButton")
         predictButton.on("click", function() {
 
-			var tblResult = document.getElementById('tbl-result')
-			tblResult.removeAttribute("style")
-
 			// var $SCRIPT_ROOT = "http://127.0.0.1:8000/predict/";
 			var $SCRIPT_ROOT =  "https://murmuring-bayou-92841.herokuapp.com/predict/";
 
             var canvasObj = document.getElementById("canvas");
             var context = canvas.getContext( "2d" );
-            var img = canvasObj.toDataURL();
+			var img = canvasObj.toDataURL();
+			
+			//call save
             			
 			$.ajax({
 				type: 'POST',
 				url: $SCRIPT_ROOT,
 				data: JSON.stringify (img),
+				beforeSend: function(){
+					$("#loading").show();
+				},
 				success: function(data) {
 					var response = data.response
 					var tuple = response.split("|")
@@ -162,12 +164,19 @@
 					$("#result-2").text(result2[0] || "-");
 					$("#result-3").text(result3[0] || "-");
 
+					
+					var tblResult = document.getElementById('tbl-result')
+					tblResult.removeAttribute("style")
+
 					clearCanvas(canvas,context)
 
 					// context.clearRect( 0, 0, 280, 280 );
                     // context.fillStyle="white";
                     // context.fillRect(0,0,canvas.width,canvas.height);
-                },
+				},
+				complete:function(data){	
+					$("#loading").hide();
+				},
                 error: function (req, err) {
 					console.log(err)      
 				},
