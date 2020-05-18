@@ -6,6 +6,11 @@
 # Demo
 - https://kzis.github.io/thai-handwritten-recognition-frontend/#
 
+
+# Source
+- Backend : https://github.com/Kzis/thai-handwritten-recognition-backend
+- Model : https://github.com/Kzis/thai-handwritten-recognition-model
+
 # Technology
 - HTML
 - CSS
