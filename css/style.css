@@ -2760,7 +2760,6 @@ ul {
 }
 
 @media (max-width: 576px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .banner_part .banner_text h1 {
     font-size: 25px;
     margin-bottom: 15px;
@@ -2770,7 +2769,6 @@ ul {
 }
 
 @media (max-width: 576px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   #div-result {
     margin-left: 40px;
   }
@@ -2786,21 +2784,18 @@ ul {
 }
 
 @media (max-width: 576px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .canvas-res {
     margin-left: 40px;
   }
 }
 
 @media (max-width: 576px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .p-res {
     margin-left: 30px;
   }
 }
 
 @media (max-width: 576px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .btn-res {
     margin-left: 35px;
   }
@@ -2809,7 +2804,6 @@ ul {
 
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .banner_part .banner_text h1 {
     font-size: 30px;
     margin-bottom: 15px;
@@ -2818,7 +2812,6 @@ ul {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .banner_part .banner_text h1 {
     font-size: 40px;
     margin-bottom: 15px;
@@ -2828,14 +2821,12 @@ ul {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .canvas-res {
     margin-left: 210px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 44, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
   .btn-res {
     margin-left: 210px;
   }
