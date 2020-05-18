@@ -17,7 +17,8 @@
 		ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
 
 		ctx.beginPath();
-		ctx.arc(x, y, size, 0, Math.PI*2, true); 
+		// ctx.arc(x, y, size, 0, Math.PI*2, true); 
+		ctx.arc(x, y, size, 0, 20, true); 
 		ctx.closePath();
 		ctx.fill();
 	} 
