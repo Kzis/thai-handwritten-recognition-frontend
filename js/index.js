@@ -1,15 +1,24 @@
+
+
 (function()
 {
 	
+	var config = {
+		apiKey: "AIzaSyAjMm4_TFeXCGlYCjcZwGKcdQ479EpI2Dw",
+		authDomain: "thw-project.firebaseapp.com",
+		databaseURL: "https://thw-project.firebaseio.com",
+		storageBucket: "thw-project.appspot.com"
+	};
+	firebase.initializeApp(config);
+
+	var database = firebase.database();
+	var storageRef = firebase.storage().ref();
+
 	var canvas,ctx;
-
 	var mouseX,mouseY,mouseDown=0;
-
 	var touchX,touchY;
-
 	var Mouse = { x: 0, y: 0 };
 	var lastMouse = { x: 0, y: 0 };
-
 
 	function drawDot(ctx,x,y,size) {
 		r=0; g=0; b=0; a=255;
@@ -130,6 +139,13 @@
 		}
 	}
 
+	function getNewDate(){
+		var d = new Date
+		dformat = [d.getFullYear() , d.getMonth()+1 , d.getDate()].join('')+
+			[d.getHours() , d.getMinutes() , d.getSeconds() , d.getMilliseconds()].join('');
+		return dformat
+	}
+
 	function debug(){
 
 		canvas = document.getElementById('canvas');
@@ -146,6 +162,20 @@
 			var img = canvasObj.toDataURL();
 			
 			//call save
+			var fileName = getNewDate()
+			var thwStorage = storageRef.child('thw/'+fileName);
+			thwStorage.putString(img, 'data_url').then(function(fileSnapshot) {
+				console.log('Uploaded a data_url string! : ' , fileSnapshot.ref.getDownloadURL());
+				fileSnapshot.ref.getDownloadURL().then((url) => {
+					console.log('Save a data_url string! : ' , url);
+					database.ref('thw/' + fileName).set({
+						downloadURL: url
+					  });
+				});
+			});
+
+			// console.log(img)
+			// console.log(typeof(img))
             			
 			$.ajax({
 				type: 'POST',
@@ -202,9 +232,16 @@
 
 	}
 
+
+
 	debug();
 	init()
+
+	// ================================================
 	
+
+
+
 	context.clearRect( 0, 0, 280, 280 );
 	context.fillStyle="white";
 	context.fillRect(0,0,canvas.width,canvas.height);

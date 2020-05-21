@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "thw-project",
+    "dev": "thw-project"
+  }
+}
