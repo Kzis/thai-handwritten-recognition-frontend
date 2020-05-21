@@ -145,10 +145,27 @@
 			[d.getHours() , d.getMinutes() , d.getSeconds() , d.getMilliseconds()].join('');
 		return dformat
 	}
-	
-	function test(){
-		return "Hello world"
+
+	function getUrlList(){
+		var url = []
+		database.ref('/thw/').once('value').then(function(snapshot) {
+			snapshot.forEach(obj => {
+				url.push(obj.val().downloadURL);
+			});
+		});
+
+		ul = document.createElement('ul');
+		document.getElementById('myItemList').appendChild(ul);
+
+		url.forEach(function (item) {
+			let li = document.createElement('li');
+			ul.appendChild(li);
+		
+			li.innerHTML += item;
+		});
+		
 	}
+
 
 	function debug(){
 
@@ -240,7 +257,6 @@
 
 	debug();
 	init()
-
 	// ================================================
 	
 
