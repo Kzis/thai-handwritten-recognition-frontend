@@ -145,6 +145,10 @@
 			[d.getHours() , d.getMinutes() , d.getSeconds() , d.getMilliseconds()].join('');
 		return dformat
 	}
+	
+	function test(){
+		return "Hello world"
+	}
 
 	function debug(){
 
