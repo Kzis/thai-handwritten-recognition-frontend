@@ -32,6 +32,8 @@
         text += "</ul>";
     
         document.getElementById("myItemList").innerHTML = text;
+
+        document.getElementById("show").innerHTML = "<p>" + "Data amount : " + url.length + "</p>";
 		
     }
     
